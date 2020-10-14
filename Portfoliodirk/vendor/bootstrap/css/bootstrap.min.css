@@ -4504,6 +4504,22 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     border-radius: .25rem
 }
 
+
+.card:hover{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #E9ECEF;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem
+
+}
+
 .card>hr {
     margin-right: 0;
     margin-left: 0
@@ -6511,11 +6527,11 @@ a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover
 }
 
 .bg-dark {
-    background-color: #343a40!important
+    background-color: #31098d!important
 }
 
 a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
-    background-color: #1d2124!important
+    background-color: #ffffff!important
 }
 
 .bg-white {
