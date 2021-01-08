@@ -55,8 +55,8 @@ body {
 
 .opmaakkop {
   
-  color: rgb(255, 255, 255);
-  background-color: rgba(10, 27, 83, 0.6);
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
 
  font-weight: bold;
 
@@ -65,14 +65,10 @@ body {
 .masthead {
   height: 30vh;
   min-height: 500px;
-  background-image: url(../pics/plaatjestartpagina.jpg);
+  background-image: url(../pics/plaatjestartpagina2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.rondefoto{
-  border-radius: 50%;
 }
 
 .center {

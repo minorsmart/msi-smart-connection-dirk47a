@@ -4619,7 +4619,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .card-img, .card-img-bottom, .card-img-top {
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    width: 100%
+    width: 100%;
+    background-color: #0078D4; 
 }
 
 .card-img, .card-img-top {
@@ -6527,7 +6528,7 @@ a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover
 }
 
 .bg-dark {
-    background-color: #31098d!important
+    background-color: #0078D4!important
 }
 
 a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
