@@ -84,15 +84,15 @@
   <div class="container">
     <!-- Jumbotron Header -->
     <br>
-    <h1>Week 1: Kruispunten tussen HBO-ICT en Smart Industry</h1>
+    <h1>Live plantgegevens</h1>
 
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a class="breadcrumbstyle" href="index.html">Portfolio</a></li>
       <li class="breadcrumb-item">
-        <a class="breadcrumbstyle" href="smartstart.html">Smart Start</a></li>
-      <li class="breadcrumb-item active" aria-current="page">WK1: Kruispunten</li>
+        <a class="breadcrumbstyle" href="smarttechnology.html">Smart Technology</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Live plantgegevens</li>
     </ol>
 
 
@@ -102,11 +102,12 @@
     <!-- Page Features -->
 
 
-    <h2>Inleiding opleiding HBO ICT</h2>
-Mijn plant: 
+    <h2>Mijn plant</h2>
+
+    De volgende tabel geeft (net als de app) de live-waardes van mijn plant weer.
 
 
-<html>
+<br><br>
 <meta http-equiv="refresh" content="60" />
 
 <head>
@@ -128,15 +129,49 @@ fetch('http://blynk-cloud.com/' + auth_token + '/get/' + pin)
 
 get_pin('V1', "Luchtvochtigheid");
 get_pin('V5', "Licht");
-
+get_pin('V2', "Temperatuur");
+get_pin('V6', "Vocht");
 </script>
 
 </head>
 
 <body>
 
-<div id="Luchtvochtigheid" style="color:red">V1</div>
-<div id="Light" style="color:red">V5</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sensor</th>
+        <th scope="col">Waarde</th>
+        <th scope="col">Eenheid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Luchtvochtigheid</td>
+        <td><div id="Luchtvochtigheid">V1</div></td>
+        <td>RH</td>
+      </tr>
+      <tr>
+        <td>Temperatuur</td>
+        <td><div id="Temperatuur">V2</div></td>
+        <td>Graden Celcius</td>
+      </tr>
+      <tr>
+        <td>Hoeveelheid licht</td>
+        <td><div id="Licht">V5</div></td>
+        <td>Ohm</td>
+      </tr>
+      <tr>
+        <td>Vochtigheid aarde</td>
+        <td><div id="Vocht">V6</div></td>
+        <td>RH</td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+
 </body>
 
 
