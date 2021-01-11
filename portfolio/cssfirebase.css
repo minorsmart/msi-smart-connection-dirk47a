@@ -17,18 +17,29 @@
 }
 
 
+h6{
+ 
+    border: 1px solid #dee2e6!important
+    
+}
+
 .fbli h2{
     display: block;
     
-    margin-bottom: 0;
+    margin-bottom: 10px;
     font-weight: 0;
     line-height: 1;
+
+  
+  border-radius: 5px;
 }
 
 .fbli small:nth-child(2){
     font-size: 16px;
     color: rgb(0, 0, 0);
     line-height: 2;
+    
+    
     
     
 }

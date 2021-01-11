@@ -53,9 +53,11 @@ const dirkdata = document.querySelector('#dirkdata');
 
 //create element and render cafe
 function renderdirkdata(doc){
-let li = document.createElement('div');
+let li = document.createElement('h6');
 let voornaam = document.createElement('h2');
 let bericht = document.createElement('small');
+
+
 
 li.setAttribute('data-id', doc.id);
 voornaam.textContent = doc.data().voornaam;
