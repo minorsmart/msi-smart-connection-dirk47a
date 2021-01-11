@@ -1,0 +1,35 @@
+
+
+
+.fbul{
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.fbli{
+    
+    
+    margin-bottom: 0;
+    font-weight: 0;
+    line-height: 0;
+   
+}
+
+
+.fbli h2{
+    display: block;
+    
+    margin-bottom: 0;
+    font-weight: 0;
+    line-height: 1;
+}
+
+.fbli small:nth-child(2){
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    line-height: 2;
+    
+    
+}
+

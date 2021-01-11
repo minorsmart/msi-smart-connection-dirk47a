@@ -13,6 +13,9 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var firestore = firebase.firestore()
   
+
+ 
+
   //Variable to access database collection
   const db = firestore.collection("gastenboek")
   
@@ -42,4 +45,33 @@ var firebaseConfig = {
   
     //alert
     alert("Je bericht is geplaatst in het gastenboek")
+    
   })
+
+
+const dirkdata = document.querySelector('#dirkdata');
+
+//create element and render cafe
+function renderdirkdata(doc){
+let li = document.createElement('div');
+let voornaam = document.createElement('h2');
+let bericht = document.createElement('small');
+
+li.setAttribute('data-id', doc.id);
+voornaam.textContent = doc.data().voornaam;
+bericht.textContent = doc.data().bericht;
+
+li.appendChild(voornaam);
+li.appendChild(bericht);
+
+dirkdata.appendChild(li);
+}
+
+
+firestore.collection('gastenboek').get().then((snapshot) =>{
+    snapshot.docs.forEach(doc =>{
+        console.log(doc.data())
+        renderdirkdata(doc);
+    
+    })
+})
