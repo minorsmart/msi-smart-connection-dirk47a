@@ -28,17 +28,52 @@ var firebaseConfig = {
     e.preventDefault()
   
     //Get Form Values
-    let voornaam = document.getElementById('voornaam').value
-    let achternaam = document.getElementById('achternaam').value
-    let bericht = document.getElementById('bericht').value
+  let voornaam;
+    let achternaam;
+    let bericht;
   
+  
+    
+      var v = document.forms["gastenboek"]["voornaam"].value;
+      if (v == "") {
+        alert("Vul je naam in.");
+        return false;
+      }else{
+        voornaam = document.getElementById('voornaam').value
+      }
+
+      var a = document.forms["gastenboek"]["achternaam"].value;
+      if (a == "") {
+        alert("Vul je achternaam in.");
+        return false;
+      }else{
+        achternaam = document.getElementById('achternaam').value
+      }
+
+      var b = document.forms["gastenboek"]["bericht"].value;
+      if (b == "") {
+        alert("Vul je achternaam in.");
+        return false;
+      }else{
+        bericht = document.getElementById('bericht').value
+      }
+
+
+
+
+
+   
+
     //Save Form Data To Firebase
     db.doc().set({
       voornaam: voornaam,
       achternaam: achternaam,
-      bericht: bericht
+      bericht: bericht,
+     timestamp:firebase.firestore.FieldValue.serverTimestamp()
+
     }).then( () => {
       console.log("Data saved")
+      location.reload();
     }).catch((error) => {
       console.log(error)
     })
@@ -67,13 +102,25 @@ li.appendChild(voornaam);
 li.appendChild(bericht);
 
 dirkdata.appendChild(li);
+
 }
 
 
-firestore.collection('gastenboek').get().then((snapshot) =>{
-    snapshot.docs.forEach(doc =>{
-        console.log(doc.data())
-        renderdirkdata(doc);
+
+//firestore.collection('gastenboek').get().then((snapshot) =>{
+    //snapshot.docs.forEach(doc =>{
+  //      console.log(doc.data())
+  //renderdirkdata(doc);
     
-    })
-})
+//})
+//})
+
+firestore.collection("gastenboek")
+.orderBy("timestamp", "desc").onSnapshot(snapshot => {      
+ snapshot.docs.forEach(doc =>{
+ console.log(doc.data())
+ renderdirkdata(doc);   
+ 
+})    
+      
+});
