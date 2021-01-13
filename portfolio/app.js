@@ -52,7 +52,7 @@ var firebaseConfig = {
 
       var b = document.forms["gastenboek"]["bericht"].value;
       if (b == "") {
-        alert("Vul je achternaam in.");
+        alert("Vul je bericht in.");
         return false;
       }else{
         bericht = document.getElementById('bericht').value
@@ -86,7 +86,7 @@ var firebaseConfig = {
 
 const dirkdata = document.querySelector('#dirkdata');
 
-//create element and render cafe
+//create element and render voornaam en bericht
 function renderdirkdata(doc){
 let li = document.createElement('h6');
 let voornaam = document.createElement('h2');
