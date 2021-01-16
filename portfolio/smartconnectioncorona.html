@@ -119,13 +119,13 @@
           .then(function(resp) { return resp.json() })
           .then(function(data) {
               console.log(data);
-              console.log(data.Countries[121].Country);
-              console.log(data.Countries[121].TotalDeaths);
+              console.log(data.Countries[119].Country);
+              console.log(data.Countries[119].TotalDeaths);
       
-              document.getElementById("land").innerHTML = (data.Countries[121].Country);
-              document.getElementById("datum").innerHTML= (data.Countries[121].Date);
-              document.getElementById("totaal").innerHTML = (data.Countries[121].TotalDeaths);
-              document.getElementById("nieuw").innerHTML= (data.Countries[121].NewDeaths);
+              document.getElementById("land").innerHTML = (data.Countries[119].Country);
+              document.getElementById("datum").innerHTML= (data.Countries[119].Date);
+              document.getElementById("totaal").innerHTML = (data.Countries[119].TotalDeaths);
+              document.getElementById("nieuw").innerHTML= (data.Countries[119].NewDeaths);
           })
           .catch(function(){
           

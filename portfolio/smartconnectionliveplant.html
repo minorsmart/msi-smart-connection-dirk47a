@@ -79,13 +79,12 @@
 
 
 
+
   <!-- Page Content -->
   <div class="container">
     <!-- Jumbotron Header -->
     <br>
-
-
-    <h1>Mental Model</h1>
+    <h1>Live plantgegevens</h1>
 
 
     <ol class="breadcrumb">
@@ -93,24 +92,124 @@
         <a class="breadcrumbstyle" href="index.html">Portfolio</a></li>
       <li class="breadcrumb-item">
         <a class="breadcrumbstyle" href="smartconnection.html">Smart Connection</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Mental Model</li>
+      <li class="breadcrumb-item active" aria-current="page">Live plantgegevens</li>
     </ol>
+
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="smarttechnologydashboard.html" aria-label="Previous">
+            <span aria-hidden="true">&laquo; Dashboard</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+    
+        <li class="page-item ml-auto">
+          <a class="page-link" href="smarttechnologybusinesscontext.html" aria-label="Next">
+            <span aria-hidden="true">IoT in businesscontext &raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
 
 
     <!-- Page Features -->
 
+
+    <h2>Mijn plant</h2>
+
+    De volgende tabel geeft (net als de app) de live-waardes van mijn plant weer.
+
+
+<br><br>
+<meta http-equiv="refresh" content="60" />
+
+<head>
+<script>
+
+var auth_token = 'H_LWy16MUOMVU-IRw_HGoKih62ZMrC_K';
+
+function get_pin(pin, element) {
+
+fetch('http://blynk-cloud.com/' + auth_token + '/get/' + pin)
+.then(response => response.json())
+.then(data => {
+  window[pin] = data;
+  document.getElementById(element).innerHTML = data;
+})
+.catch(error => console.error(error))
+
+}
+
+get_pin('V1', "Luchtvochtigheid");
+get_pin('V5', "Licht");
+get_pin('V2', "Temperatuur");
+get_pin('V6', "Vocht");
+</script>
+
+</head>
+
+<body>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sensor</th>
+        <th scope="col">Waarde</th>
+        <th scope="col">Eenheid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Luchtvochtigheid</td>
+        <td><div id="Luchtvochtigheid">V1</div></td>
+        <td>RH</td>
+      </tr>
+      <tr>
+        <td>Temperatuur</td>
+        <td><div id="Temperatuur">V2</div></td>
+        <td>Graden Celcius</td>
+      </tr>
+      <tr>
+        <td>Hoeveelheid licht</td>
+        <td><div id="Licht">V5</div></td>
+        <td>Ohm</td>
+      </tr>
+      <tr>
+        <td>Vochtigheid aarde</td>
+        <td><div id="Vocht">V6</div></td>
+        <td>RH</td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="smarttechnologydashboard.html" aria-label="Previous">
+          <span aria-hidden="true">&laquo; Dashboard</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
   
+      <li class="page-item ml-auto">
+        <a class="page-link" href="smarttechnologybusinesscontext.html" aria-label="Next">
+          <span aria-hidden="true">IoT in businesscontext &raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-    <h2>Mental Model
-    </h2>
-
-    
-   
-    <img src="pics/mentalmodelgroot.jpg" alt="Smart Industry-wiel" style="width:70%;height:70%;">
-
-    
 
 
+</body>
 
 
   </div>
